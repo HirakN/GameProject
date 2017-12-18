@@ -20,7 +20,7 @@ $(document).ready(function() {
 			reveal(this);	
 		});
 	}
-
+ 
 	function reveal(box) {
 		var rand = Math.random();
 		if (rand < clearChance) {
