@@ -1,13 +1,13 @@
 
 $(document).ready(function() {
 
-	for (var i = 1; i < 36; i++) {
+	for (var i = 0; i < 36; i++) {
 		var div = $('<div class="box"></div>');
 		$("#game-container").append(div);
 	}
 
-	var boxes = $(".box");
-	console.log(boxes[1]);
-
+	$(".box").one("click", function() {
+		console.log("Click!")	
+	});
 })
 	
