@@ -1,13 +1,17 @@
 
 $(document).ready(function() {
 
-	
+	var clearChance = 0.6;
 
 	function makeGrid() {
-		for (var i = 0; i < 36; i++) {
+		var div = $('<div id="start-box"></div>');
+		$("#game-container").append(div);
+		for (var i = 0; i < 34; i++) {
 			var div = $('<div class="box"></div>');
 			$("#game-container").append(div);
-		}	
+		}
+		var div = $('<div id="end-box"></div>');
+		$("#game-container").append(div);
 	}
 
 	function addListeners() {
@@ -18,7 +22,13 @@ $(document).ready(function() {
 	}
 
 	function reveal(box) {
-		box.innerHTML = "hello";
+		var rand = Math.random();
+		if (rand < clearChance) {
+			box.innerHTML = "";
+			$(box).css("background-color","blue");
+		} else {
+			box.innerHTML = "Hazard"
+		}
 	}
 
 	makeGrid();
