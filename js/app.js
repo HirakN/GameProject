@@ -9,5 +9,9 @@ $(document).ready(function() {
 	$(".box").one("click", function() {
 		console.log("Click!")	
 	});
+
+	function reveal() {
+		
+	}
 })
 	
