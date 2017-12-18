@@ -27,9 +27,9 @@ $(document).ready(function() {
 		var rand = Math.random();
 		if (rand < clearChance) {
 			box.innerHTML = "";
-			$(box).css("background-color","blue");
+			$(box).css("background-color","Linen");
 		} else {
-			box.innerHTML = "Hazard"
+			box.innerHTML = "Hazard";
 		}
 	}
 
