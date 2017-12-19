@@ -85,8 +85,8 @@ $(document).ready(function() {
 
 	function lifeCheck() {
 		if (playerLife < 1) {
-			alert('You are dead, refresh the page')
-			
+			alert('You are dead, refresh the page');
+			$("div").off("click");
 		}
 	}
 
