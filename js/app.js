@@ -16,7 +16,8 @@
 $(document).ready(function() {
 
 	var clearChance = 0.65;
-	var currentBox = 0;
+	var currentBox = 0;	
+	var playerLife = 1;
 
 	function makeGrid() {
 		// Starting point
@@ -41,6 +42,7 @@ $(document).ready(function() {
 
 			if ( isAdjacent(buttonClass) ) {
 				reveal(this);
+				lifeCheck();
 				currentBox = buttonClass;
 				console.log("Click adjacent!");
 				console.log("currentbox: "+ currentBox);
@@ -75,6 +77,13 @@ $(document).ready(function() {
 		} else {
 			box.innerHTML = "Mine";
 			$(box).css("background-color", "Linen");
+			playerLife--;
+		}
+	}
+
+	function lifeCheck() {
+		if (playerLife < 1) {
+			alert('You are dead, refresh the page')
 		}
 	}
 
