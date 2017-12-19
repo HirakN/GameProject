@@ -5,7 +5,14 @@
 // - HP Up
 // Move number
 // Take keypresses
-// 
+
+// if statement checking adjacent cells
+/*
+	_|_|_|_
+	_|_|_|_
+	_|_|_|_
+	 | | | 
+*/
 
 $(document).ready(function() {
 
@@ -13,14 +20,14 @@ $(document).ready(function() {
 
 	function makeGrid() {
 		// Starting point
-		var div = $('<div id="start-box"></div>');
+		var div = $('<div class = "0" id="start-box"></div>');
 		$("#game-container").append(div);
-		for (var i = 0; i < 34; i++) {
-			var div = $('<div class="box" id="' + i + '"></div>');
+		for (var i = 1; i < 35; i++) {
+			var div = $('<div  class="' + i + ' box"></div>');
 			$("#game-container").append(div);
 		}
 		// Finish line
-		var div = $('<div id="end-box"></div>');
+		var div = $('<div class="35" id="end-box"></div>');
 		$("#game-container").append(div);
 	}
 
