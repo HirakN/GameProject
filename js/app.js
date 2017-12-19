@@ -38,23 +38,30 @@ $(document).ready(function() {
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
+			console.log("clicked " + buttonClass)
 
 			if ( isAdjacent(buttonClass) ) {
-				console.log("currentbox: "+ currentBox);
 				reveal(this);
 				currentBox = buttonClass;
+				console.log("Click adjacent!");
+				console.log("currentbox: "+ currentBox);
+			} else {
+				console.log("Click NOT adjacent!");
+				console.log("currentbox: "+ currentBox);
 			}
 		});
 
-		$("end-box").click(function() {
+		$("#end-box").click(function() {
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
 
 			if ( isAdjacent(buttonClass) ) {
 				console.log("Click adjacent!");
-				currentBox = buttonClass;
+				currentBox = buttonClass;	
 				console.log("currentbox: "+ currentBox);
+			} else {
+				console.log("Not clicked")
 			}
 		})
 
@@ -64,33 +71,30 @@ $(document).ready(function() {
 		var rand = Math.random();
 		if (rand < clearChance) {
 			box.innerHTML = "";
-			$(box).css("background-color","Linen");
+			$(box).css("background-color", "Linen");
 		} else {
-			box.innerHTML = "Hazard";
+			box.innerHTML = "Mine";
 		}
 	}
 
 	function adjacentBoxes(boxid) {
 		var adjacentBoxes = [];
 
-		adjacentBoxes.push(boxid += 1);
-		adjacentBoxes.push(boxid += 5);
-		adjacentBoxes.push(boxid += 6);
-		adjacentBoxes.push(boxid += 7);
-		adjacentBoxes.push(boxid -= 1);
-		adjacentBoxes.push(boxid -= 5);
-		adjacentBoxes.push(boxid -= 6);
-		adjacentBoxes.push(boxid -= 7);
+		adjacentBoxes.push(boxid + 1);
+		adjacentBoxes.push(boxid + 5);
+		adjacentBoxes.push(boxid + 6);
+		adjacentBoxes.push(boxid + 7);
+		adjacentBoxes.push(boxid - 1);
+		adjacentBoxes.push(boxid - 5);
+		adjacentBoxes.push(boxid - 6);
+		adjacentBoxes.push(boxid - 7);
+		console.log(adjacentBoxes);
 		return adjacentBoxes;
 	}
 
 	function isAdjacent(boxid) {
 		adjArray = adjacentBoxes(currentBox)
-		if(adjArray.includes(boxid)) {
-			return true;
-		} else {
-			return false;
-		}
+		return adjArray.includes(boxid);
 	}
 
 	makeGrid();
