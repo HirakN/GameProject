@@ -1,5 +1,4 @@
-// Show number of bombs on map
-// Add life
+
 // Add pickups
 // - Lantern, illuminates tiles around you
 // - HP Up
@@ -17,7 +16,7 @@ $(document).ready(function() {
 
 	var clearChance = 0.65;
 	var currentBox = 0;	
-	var playerLife = 1;
+	var playerLife = 3;
 
 	function makeGrid() {
 		// Starting point
@@ -42,15 +41,12 @@ $(document).ready(function() {
 
 			if ( isAdjacent(buttonClass) ) {
 				reveal(this);
-				setTimeout(function() {
-					lifeCheck();
-				},100);
 				currentBox = buttonClass;
 				console.log("Click adjacent!");
-				console.log("currentbox: "+ currentBox);
+				console.log("currentbox: " + currentBox);
 			} else {
 				console.log("Click NOT adjacent!");
-				console.log("currentbox: "+ currentBox);
+				console.log("currentbox: " + currentBox);
 			}
 		});
 
@@ -60,12 +56,12 @@ $(document).ready(function() {
 			buttonClass = parseInt(buttonClass);
 
 			if ( isAdjacent(buttonClass) ) {
-				alert("You Win!")
+				alert("You Win!");
 				console.log("Click adjacent!");
 				currentBox = buttonClass;	
 				console.log("currentbox: "+ currentBox);
 			} else {
-				console.log("Not clicked")
+				console.log("Not clicked");
 			}
 		})
 
@@ -80,14 +76,19 @@ $(document).ready(function() {
 			box.innerHTML = '<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/4948-200.png" width="100%"></img>';
 			$(box).css("background-color", "Linen");
 			playerLife--;
+			setTimeout(function() {
+					lifeCheck();
+			},100);
 		}
 	}
 
 	function lifeCheck() {
-		if (playerLife < 1) {
-			alert('You are dead, refresh the page');
+		if (playerLife >= 1) {
+			alert('You have ' + playerLife + ' lives remaining...');
+		} else {
+			alert('You are dead, game over');
 			$("div").off("click");
-		}
+		} 
 	}
 
 	function adjacentBoxes(boxid) {
