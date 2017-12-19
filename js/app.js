@@ -4,7 +4,6 @@
 // - Lantern, illuminates tiles around you
 // - HP Up
 // Move number
-// Take keypresses
 
 // if statement checking adjacent cells
 /*
@@ -16,7 +15,7 @@
 
 $(document).ready(function() {
 
-	var clearChance = 0.6;
+	var clearChance = 0.65;
 	var currentBox = 0;
 
 	function makeGrid() {
@@ -57,6 +56,7 @@ $(document).ready(function() {
 			buttonClass = parseInt(buttonClass);
 
 			if ( isAdjacent(buttonClass) ) {
+				alert("You Win!")
 				console.log("Click adjacent!");
 				currentBox = buttonClass;	
 				console.log("currentbox: "+ currentBox);
@@ -74,6 +74,7 @@ $(document).ready(function() {
 			$(box).css("background-color", "Linen");
 		} else {
 			box.innerHTML = "Mine";
+			$(box).css("background-color", "Linen");
 		}
 	}
 
