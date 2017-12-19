@@ -17,6 +17,7 @@
 $(document).ready(function() {
 
 	var clearChance = 0.6;
+	var currentBox = 0;
 
 	function makeGrid() {
 		// Starting point
@@ -32,8 +33,12 @@ $(document).ready(function() {
 	}
 
 	function addListeners() {
-		$(".box").one("click", function() {
+		$(".box").click(function() {
 			console.log("Click!");
+			// reutrns string boxid number
+			var buttonClass = $(this).attr("class");
+			// returns integer version of boxid number
+			buttonClass = parseInt(buttonClass);
 			reveal(this);
 		});
 	}
@@ -46,6 +51,20 @@ $(document).ready(function() {
 		} else {
 			box.innerHTML = "Hazard";
 		}
+	}
+
+	function adjacentBoxes(boxid) {
+		var adjacentBoxes = [];
+
+		adjacentBoxes.push(boxid += 1);
+		adjacentBoxes.push(boxid += 5);
+		adjacentBoxes.push(boxid += 6);
+		adjacentBoxes.push(boxid += 7);
+		adjacentBoxes.push(boxid -= 1);
+		adjacentBoxes.push(boxid -= 5);
+		adjacentBoxes.push(boxid -= 6);
+		adjacentBoxes.push(boxid -= 7);
+		return adjacentBoxes;
 	}
 
 	makeGrid();
