@@ -21,7 +21,12 @@
 	box-sizing: border-box;
 }
 
+#start-box, #end-box {
+	background-color: yellow;
+}
+
 .box {
 	text-align: center;
 	font-size: 24px;
 }
+

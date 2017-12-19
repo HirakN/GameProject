@@ -1,3 +1,11 @@
+// Show number of bombs on map
+// Add life
+// Add pickups
+// - Lantern, illuminates tiles around you
+// - HP Up
+// Move number
+// Take keypresses
+// 
 
 $(document).ready(function() {
 
@@ -35,5 +43,5 @@ $(document).ready(function() {
 
 	makeGrid();
 	addListeners();
-})
+});
 	
