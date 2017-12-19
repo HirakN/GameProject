@@ -42,7 +42,9 @@ $(document).ready(function() {
 
 			if ( isAdjacent(buttonClass) ) {
 				reveal(this);
-				lifeCheck();
+				setTimeout(function() {
+					lifeCheck();
+				},100);
 				currentBox = buttonClass;
 				console.log("Click adjacent!");
 				console.log("currentbox: "+ currentBox);
@@ -75,7 +77,7 @@ $(document).ready(function() {
 			box.innerHTML = "";
 			$(box).css("background-color", "Linen");
 		} else {
-			box.innerHTML = "Mine";
+			box.innerHTML = '<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/4948-200.png" width="100%"></img>';
 			$(box).css("background-color", "Linen");
 			playerLife--;
 		}
@@ -84,6 +86,7 @@ $(document).ready(function() {
 	function lifeCheck() {
 		if (playerLife < 1) {
 			alert('You are dead, refresh the page')
+			
 		}
 	}
 
