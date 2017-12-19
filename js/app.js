@@ -16,7 +16,7 @@ $(document).ready(function() {
 		var div = $('<div id="start-box"></div>');
 		$("#game-container").append(div);
 		for (var i = 0; i < 34; i++) {
-			var div = $('<div class="box"></div>');
+			var div = $('<div class="box" id="' + i + '"></div>');
 			$("#game-container").append(div);
 		}
 		// Finish line
@@ -27,7 +27,7 @@ $(document).ready(function() {
 	function addListeners() {
 		$(".box").one("click", function() {
 			console.log("Click!");
-			reveal(this);	
+			reveal(this);
 		});
 	}
  
