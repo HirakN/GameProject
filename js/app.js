@@ -34,13 +34,30 @@ $(document).ready(function() {
 
 	function addListeners() {
 		$(".box").click(function() {
-			console.log("Click!");
 			// reutrns string boxid number
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
-			reveal(this);
+
+			if ( isAdjacent(buttonClass) ) {
+				console.log("currentbox: "+ currentBox);
+				reveal(this);
+				currentBox = buttonClass;
+			}
 		});
+
+		$("end-box").click(function() {
+			var buttonClass = $(this).attr("class");
+			// returns integer version of boxid number
+			buttonClass = parseInt(buttonClass);
+
+			if ( isAdjacent(buttonClass) ) {
+				console.log("Click adjacent!");
+				currentBox = buttonClass;
+				console.log("currentbox: "+ currentBox);
+			}
+		})
+
 	}
  
 	function reveal(box) {
@@ -65,6 +82,15 @@ $(document).ready(function() {
 		adjacentBoxes.push(boxid -= 6);
 		adjacentBoxes.push(boxid -= 7);
 		return adjacentBoxes;
+	}
+
+	function isAdjacent(boxid) {
+		adjArray = adjacentBoxes(currentBox)
+		if(adjArray.includes(boxid)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	makeGrid();
