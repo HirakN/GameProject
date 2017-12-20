@@ -20,6 +20,8 @@ $(document).ready(function() {
 	var playerLife = 3;
 	var gridSize = 7;
 	var hidden = false;
+	var moves = 0;
+	var 
 
 	function makeGrid() {
 		// Starting point

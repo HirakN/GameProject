@@ -47,6 +47,7 @@ h1,h2,p,ul {
 .button-container {
 	margin: 20px auto;
 	width: 700px;
+	text-align: center;
 }
 
 #game-container {
