@@ -21,7 +21,13 @@ $(document).ready(function() {
 	var gridSize = 7;
 	var hidden = false;
 	var moves = 0;
-	var 
+	var score = 0;
+
+	function setUp() {
+		
+		makeGrid();
+		addListeners();
+	}
 
 	function makeGrid() {
 		// Starting point
@@ -94,6 +100,22 @@ $(document).ready(function() {
 		})
 
 	}
+
+	function updateMessage() {
+		
+		var messageField = $("#message-board");
+	}
+
+	function updateFields() {
+		var scoreField = $("#score");
+		var lifeField = $("#lives");
+		var moveField = $("#moves");
+
+		scoreField.text("Score: " + score);
+		lifeField.text("Lives: " + playerLife);
+		moveField.text("Moves: " + moves);
+
+	}
  
 	function reveal(box) {
 		var rand = Math.random();
@@ -150,7 +172,6 @@ $(document).ready(function() {
 		return adjArray.includes(boxid);
 	}
 
-	makeGrid();
-	addListeners();
+	setUp();
 });
 	
