@@ -48,15 +48,16 @@ $(document).ready(function() {
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
-			console.log("clicked " + buttonClass)
-
+			
 			if ( isAdjacent(buttonClass) ) {
-				alert("You Win!");
+				moves++;
+				updateMessage("You Win!");
 				currentBox = buttonClass;
 				$("div").off("click");
 			} else {
-				console.log("Not clicked");
+				console.log("Not adjacent");
 			}
+			updateFields();
 		})
 
 		$(".box").click(function() {
@@ -65,14 +66,16 @@ $(document).ready(function() {
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
 			console.log("clicked " + buttonClass)
-
+			
 			if ( isAdjacent(buttonClass) ) {
+				moves++;
 				reveal(this);
 				currentBox = buttonClass;
 				console.log("currentbox: " + currentBox);
 			} else {
-				console.log("currentbox: " + currentBox);
+				console.log("Not adjacent");
 			}
+			updateFields();
 		});
 
 		
@@ -81,10 +84,9 @@ $(document).ready(function() {
 			var lantArray = adjacentBoxes(currentBox);
 			var box = $(".box"); // array of boxes
 			//debugger;
-
+			moves++;
 			for (var i in lantArray) {
 				var boxToReveal = lantArray[i];
-				console.log(boxToReveal);
 				reveal(box[boxToReveal]);
 			}
 		});
@@ -101,9 +103,9 @@ $(document).ready(function() {
 
 	}
 
-	function updateMessage() {
-		
+	function updateMessage(message) {
 		var messageField = $("#message-board");
+		messageField.text(message);
 	}
 
 	function updateFields() {
@@ -114,7 +116,6 @@ $(document).ready(function() {
 		scoreField.text("Score: " + score);
 		lifeField.text("Lives: " + playerLife);
 		moveField.text("Moves: " + moves);
-
 	}
  
 	function reveal(box) {
@@ -125,9 +126,7 @@ $(document).ready(function() {
 				box.innerHTML = '<img src="https://cdn.pixabay.com/photo/2016/08/29/13/55/heart-1628313_960_720.png" width="100%"></img>';
 				$(box).css("background-color", "Linen");
 				playerLife++;
-				setTimeout(function() {
-					lifeCheck();
-				},100);
+				lifeCheck();
 			} else {
 				box.innerHTML = "";
 				$(box).css("background-color", "Linen");
@@ -137,17 +136,15 @@ $(document).ready(function() {
 			$(box).css("background-color", "Linen");
 			$("#bomb")[0].play();
 			playerLife--;
-			setTimeout(function() {
-					lifeCheck();
-			},100);
+			lifeCheck();
 		}
 	}
 
 	function lifeCheck() {
 		if (playerLife >= 1) {
-			alert('You have ' + playerLife + ' lives remaining...');
+			updateMessage('You have ' + playerLife + ' lives!');
 		} else {
-			alert('You are dead, game over');
+			updateMessage('You are dead, game over!');
 			$("div").off("click");
 		} 
 	}

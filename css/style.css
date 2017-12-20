@@ -19,6 +19,10 @@ h1,h2,p,ul {
 	font-size: 20px;
 }	
 
+#message-board {
+	color: orange;
+}
+
 #info {
 	float: left;
 }
