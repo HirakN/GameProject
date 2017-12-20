@@ -14,7 +14,8 @@
 
 $(document).ready(function() {
 
-	var clearChance = 0.65;
+	var clearChance = 0.75;
+	var lifeChance = 0.2;
 	var currentBox = 0;	
 	var playerLife = 3;
 
@@ -60,6 +61,7 @@ $(document).ready(function() {
 				console.log("Click adjacent!");
 				currentBox = buttonClass;	
 				console.log("currentbox: "+ currentBox);
+				$("div").off("click");
 			} else {
 				console.log("Not clicked");
 			}
@@ -70,8 +72,18 @@ $(document).ready(function() {
 	function reveal(box) {
 		var rand = Math.random();
 		if (rand < clearChance) {
-			box.innerHTML = "";
-			$(box).css("background-color", "Linen");
+			var rand2 = Math.random();
+			if (rand2 < 0.2) {
+				box.innerHTML = '<img src="https://cdn.pixabay.com/photo/2016/08/29/13/55/heart-1628313_960_720.png" width="100%"></img>';
+				$(box).css("background-color", "Linen");
+				playerLife++;
+				setTimeout(function() {
+					lifeCheck();
+				},100);
+			} else {
+				box.innerHTML = "";
+				$(box).css("background-color", "Linen");
+			}
 		} else {
 			box.innerHTML = '<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/4948-200.png" width="100%"></img>';
 			$(box).css("background-color", "Linen");
