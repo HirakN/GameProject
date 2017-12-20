@@ -22,14 +22,14 @@ $(document).ready(function() {
 
 	function makeGrid() {
 		// Starting point
-		var div = $('<div class = "0" id="start-box"></div>');
+		var div = $('<div class = "0 box" id="start-box"></div>');
 		$("#game-container").append(div);
 		for (var i = 1; i < 48; i++) {
 			var div = $('<div  class="' + i + ' box"></div>');
 			$("#game-container").append(div);
 		}
 		// Finish line
-		var div = $('<div class="48" id="end-box"></div>');
+		var div = $('<div class="48 box" id="end-box"></div>');
 		$("#game-container").append(div);
 	}
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
 		$("#lantern").click(function() {
 			var lantArray = adjacentBoxes(currentBox);
-			
+
 		});
 
 	}
