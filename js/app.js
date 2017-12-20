@@ -14,21 +14,22 @@
 
 $(document).ready(function() {
 
-	var clearChance = 0.75;
-	var lifeChance = 0.2;
+	var clearChance = 0.7;
+	var lifeChance = 0.1;
 	var currentBox = 0;	
 	var playerLife = 3;
+	var gridSize = 7;
 
 	function makeGrid() {
 		// Starting point
 		var div = $('<div class = "0" id="start-box"></div>');
 		$("#game-container").append(div);
-		for (var i = 1; i < 35; i++) {
+		for (var i = 1; i < 48; i++) {
 			var div = $('<div  class="' + i + ' box"></div>');
 			$("#game-container").append(div);
 		}
 		// Finish line
-		var div = $('<div class="35" id="end-box"></div>');
+		var div = $('<div class="48" id="end-box"></div>');
 		$("#game-container").append(div);
 	}
 
@@ -43,10 +44,8 @@ $(document).ready(function() {
 			if ( isAdjacent(buttonClass) ) {
 				reveal(this);
 				currentBox = buttonClass;
-				console.log("Click adjacent!");
 				console.log("currentbox: " + currentBox);
 			} else {
-				console.log("Click NOT adjacent!");
 				console.log("currentbox: " + currentBox);
 			}
 		});
@@ -55,6 +54,7 @@ $(document).ready(function() {
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
+			console.log("clicked " + buttonClass)
 
 			if ( isAdjacent(buttonClass) ) {
 				alert("You Win!");
@@ -106,14 +106,14 @@ $(document).ready(function() {
 	function adjacentBoxes(boxid) {
 		var adjacentBoxes = [];
 
+		adjacentBoxes.push(boxid - gridSize);
+		adjacentBoxes.push(boxid - gridSize + 1);
 		adjacentBoxes.push(boxid + 1);
-		adjacentBoxes.push(boxid + 5);
-		adjacentBoxes.push(boxid + 6);
-		adjacentBoxes.push(boxid + 7);
+		adjacentBoxes.push(boxid + gridSize + 1);
+		adjacentBoxes.push(boxid + gridSize);
+		adjacentBoxes.push(boxid + gridSize - 1);
 		adjacentBoxes.push(boxid - 1);
-		adjacentBoxes.push(boxid - 5);
-		adjacentBoxes.push(boxid - 6);
-		adjacentBoxes.push(boxid - 7);
+		adjacentBoxes.push(boxid - gridSize - 1);
 		console.log(adjacentBoxes);
 		return adjacentBoxes;
 	}

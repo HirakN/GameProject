@@ -2,8 +2,13 @@
 	
 }
 
+body {
+	background: url('../img/metal-background.jpeg');
+}
+
 #info {
 	float: left;
+	color: white;
 }
 
 #container {
@@ -11,23 +16,23 @@
 }
 
 #game-container {
-	height: 600px;
-	width: 600px;
+	height: 700px;
+	width: 700px;
 	margin: 0 auto;
-	border: 1px solid SteelBlue;
+	border: 3px solid #FFF;
 }
 
 #game-container div {
 	height: 100px;
 	width: 100px;
-	border: 1px solid SteelBlue;
+	border: 3px solid #FFF;
 	float: left;
 	margin: 0 auto;
 	box-sizing: border-box;
 }
 
 #start-box, #end-box {
-	background-color: yellow;
+	background-color: SteelBlue;
 }
 
 .box {
