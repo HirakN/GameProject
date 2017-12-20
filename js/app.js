@@ -91,6 +91,7 @@ $(document).ready(function() {
 		} else {
 			box.innerHTML = '<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/4948-200.png" width="100%"></img>';
 			$(box).css("background-color", "Linen");
+			$("#bomb")[0].play();
 			playerLife--;
 			setTimeout(function() {
 					lifeCheck();
