@@ -19,6 +19,7 @@ $(document).ready(function() {
 	var currentBox = 0;	
 	var playerLife = 3;
 	var gridSize = 7;
+	var hidden = false;
 
 	function makeGrid() {
 		// Starting point
@@ -71,6 +72,16 @@ $(document).ready(function() {
 			var lantArray = adjacentBoxes(currentBox);
 
 		});
+
+		$("#hide-instr").click(function() {
+			if (hidden === false) {
+				$("#instructions").hide();
+				hidden = true;
+			} else {
+				$("#instructions").show();
+				hidden = false;
+			}
+		})
 
 	}
  

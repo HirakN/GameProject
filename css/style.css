@@ -1,20 +1,31 @@
 * {
-	
+	font-family: 'Bungee';
 }
 
 body {
 	background: url('../img/metal-background.jpeg');
 }
 
-#info {
-	float: left;
+h1,h2,p,ul {
 	color: white;
 }
 
-#instructions {
+#info {
+	float: left;
+}
+
+#clear {
+	clear: both;
+}
+
+.layout-text {
 	margin: 0 auto;
 	width: 700px;
-	color: white;
+}
+
+.button-container {
+	margin: 20px auto;
+	width: 700px;
 }
 
 #game-container {

@@ -5,40 +5,55 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
 </head>
 <body>
 	<audio id="bomb">
 	  	<source src="music/boms-explosion.mp3" type="audio/mp3">
 	</audio>
-	<div id="instructions">
-		<h1>Instructions</h1>
-		<p>
-			You start of on the top left blue square. The goal of the game is to make it to the same coloured square on the opposite side. You start off with 3 lives.
-		</p>
-
-		<p>
-			You move by clicking any of the (up to) 8 adjacent squares. When you click a square, one of three things can happen:
-		</p>
-
-		<ul>
-			<li>You can find a bomb, which will remove one life.</li>
-			<li>You can find a heart which will give you one life.</li>
-			<li>You will find a perfectly safe blank square.</li>
-		</ul>
-
-		<p>
-			The game ends when you reach the end or run out of lives.
-		</p>
-	</div>
+	
 	<div id="container">
-		<div id="game-container"></div>
-		<div id="info">
+		<div id="game-container">
+			<!-- Done in JS -->
+		</div>
+		<div id="clear"></div>
+		
+
+		<div class="layout-text" id="instructions">
+			<h2>Instructions</h2>
+			<p>
+				You start of on the top left blue square. The goal of the game is to make it to the same coloured square on the opposite side. You start off with 3 lives.
+			</p>
+
+			<p>
+				You move by clicking any of the (up to) 8 adjacent squares. When you click a square, one of three things can happen:
+			</p>
+
+			<ul>
+				<li>You can find a bomb, which will remove one life.</li>
+				<li>You can find a heart which will give you one life.</li>
+				<li>You will find a perfectly safe blank square.</li>
+			</ul>
+
+			<p>
+				The game ends when you reach the end or run out of lives.
+			</p>
+		</div>
+
+		<div class = "button-container">
+			<button id="hide-instr">Toggle Instructions</button>
+		</div>
+		
+		<div class="layout-text">
 			<h2>Score</h2>
 			<h2>Lives</h2>
 			<h2>Moves</h2>
-			<button id="lantern">Use Lantern</button>
+			<div class="button-container">
+				<button id="lantern">Use Lantern</button>
+			</div>
 		</div>
-		
+
 	</div>
 </body>
 </html>
