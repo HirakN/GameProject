@@ -11,8 +11,10 @@ body {
 	color: white;
 }
 
-#container {
-	
+#instructions {
+	margin: 0 auto;
+	width: 700px;
+	color: white;
 }
 
 #game-container {
@@ -39,4 +41,3 @@ body {
 	text-align: center;
 	font-size: 24px;
 }
-
