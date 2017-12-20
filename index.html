@@ -14,11 +14,24 @@
 	</audio>
 	
 	<div id="container">
+		<div id="message-container">	
+			<p id="message-board">WELCOME TO MINEWALKER</p>
+		</div>
+
 		<div id="game-container">
 			<!-- Done in JS -->
 		</div>
 		<div id="clear"></div>
 		
+		<div class="layout-text">
+			<h2 class="game-attr">Score: 0</h2>
+			<h2 class="game-attr">Lives: 3</h2>
+			<h2 class="game-attr">Moves: 0</h2>
+
+			<div class="button-container">
+				<button class="button" id="lantern">Use Lantern</button>
+			</div>
+		</div>
 
 		<div class="layout-text" id="instructions">
 			<h2>Instructions</h2>
@@ -42,18 +55,9 @@
 		</div>
 
 		<div class = "button-container">
-			<button id="hide-instr">Toggle Instructions</button>
+			<button class="button" id="hide-instr">Toggle Instructions</button>
 		</div>
 		
-		<div class="layout-text">
-			<h2>Score</h2>
-			<h2>Lives</h2>
-			<h2>Moves</h2>
-			<div class="button-container">
-				<button id="lantern">Use Lantern</button>
-			</div>
-		</div>
-
 	</div>
 </body>
 </html>

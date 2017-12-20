@@ -35,6 +35,22 @@ $(document).ready(function() {
 	}
 
 	function addListeners() {
+
+		$("#end-box").click(function() {
+			var buttonClass = $(this).attr("class");
+			// returns integer version of boxid number
+			buttonClass = parseInt(buttonClass);
+			console.log("clicked " + buttonClass)
+
+			if ( isAdjacent(buttonClass) ) {
+				alert("You Win!");
+				currentBox = buttonClass;
+				$("div").off("click");
+			} else {
+				console.log("Not clicked");
+			}
+		})
+
 		$(".box").click(function() {
 			// reutrns string boxid number
 			var buttonClass = $(this).attr("class");
@@ -51,26 +67,18 @@ $(document).ready(function() {
 			}
 		});
 
-		$("#end-box").click(function() {
-			var buttonClass = $(this).attr("class");
-			// returns integer version of boxid number
-			buttonClass = parseInt(buttonClass);
-			console.log("clicked " + buttonClass)
-
-			if ( isAdjacent(buttonClass) ) {
-				alert("You Win!");
-				console.log("Click adjacent!");
-				currentBox = buttonClass;	
-				console.log("currentbox: "+ currentBox);
-				$("div").off("click");
-			} else {
-				console.log("Not clicked");
-			}
-		})
+		
 
 		$("#lantern").click(function() {
 			var lantArray = adjacentBoxes(currentBox);
+			var box = $(".box"); // array of boxes
+			//debugger;
 
+			for (var i in lantArray) {
+				var boxToReveal = lantArray[i];
+				console.log(boxToReveal);
+				reveal(box[boxToReveal]);
+			}
 		});
 
 		$("#hide-instr").click(function() {
