@@ -67,6 +67,10 @@ $(document).ready(function() {
 			}
 		})
 
+		$("#lantern").click(function() {
+			var lantArray = adjacentBoxes(currentBox);
+		});
+
 	}
  
 	function reveal(box) {
