@@ -7,6 +7,11 @@ body {
 	animation: moveBackground 15s linear infinite;
 }
 
+.black-bg {
+	background-color: rgba(0,0,0,0.5);
+	padding: 10px 40px;
+}
+
 p, ul {
 	color: orange;
 	font-size: 1.1em;
@@ -83,7 +88,7 @@ h2 {
 }
 
 #start-box, #end-box {
-	background-color: SteelBlue;
+	background-color: orange;
 }
 
 .box {
