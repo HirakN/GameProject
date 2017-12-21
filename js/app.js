@@ -55,7 +55,7 @@ $(document).ready(function() {
 			
 			if ( isAdjacent(buttonClass) ) {
 				moves++;
-				updateMessage("You Win!");
+				updateMessage("You Win! Your score is " + score);
 				currentBox = buttonClass;
 				$("div").off("click");
 			} else {
@@ -156,7 +156,7 @@ $(document).ready(function() {
 		if (playerLife >= 1) {
 			updateMessage('You have ' + playerLife + ' lives!');
 		} else {
-			updateMessage('You are dead, game over!');
+			updateMessage('You are dead, game over! Your score is ' + score);
 			$("div").off("click");
 		} 
 	}
