@@ -7,10 +7,18 @@ body {
 	animation: moveBackground 15s linear infinite;
 }
 
-h1,h2,p,ul {
+p, ul {
+	color: orange;
+	font-size: 1.1em;
+}
+
+h1,h2,ul {
 	color: white;
 }
 
+h2 {
+	font-size: 1.7em;
+}
 #message-container {
 	width: 700px;
 	height: 50px;
@@ -44,7 +52,7 @@ h1,h2,p,ul {
 .layout-text {
 	margin: 0 auto;
 	padding-top: 5px;	
-	width: 700px;
+	width:800px;
 }
 
 .layout-text .game-attr {
@@ -87,7 +95,7 @@ h1,h2,p,ul {
 	from {
 		background-position: 0 0;
 	} to {
-		background-position: -1000px;
+		background-position: -1600px 0;
 	}
 }
 

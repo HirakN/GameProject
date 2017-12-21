@@ -16,6 +16,7 @@ $(document).ready(function() {
 
 	var clearChance = 0.7;
 	var lifeChance = 0.15;
+	var treasureChance = 0.05;
 
 	var currentBox = 0;	
 	
@@ -47,7 +48,6 @@ $(document).ready(function() {
 	}
 
 	function addListeners() {
-
 		$("#end-box").click(function() {
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
@@ -65,14 +65,14 @@ $(document).ready(function() {
 		})
 
 		$(".box").click(function() {
-			// reutrns string boxid number
-			$(".box").removeAttr("style").text("");	
+			// reutrns string boxid number	
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
 			console.log("clicked " + buttonClass)
 			
 			if ( isAdjacent(buttonClass) ) {
+				$(".box").removeAttr("style").text("");
 				moves++;
 				score+=100;
 				reveal(this);
@@ -132,12 +132,17 @@ $(document).ready(function() {
 		if (rand < clearChance) {
 			var rand2 = Math.random();
 			// Chance for clear tile to contain life
-			if (rand2 < lifeChance) {
+			if (rand2 <= lifeChance) {
 				box.innerHTML = '<img src="https://cdn.pixabay.com/photo/2016/08/29/13/55/heart-1628313_960_720.png" width="100%"></img>';
 				$(box).css("background-color", "Linen");
 				$("#heart")[0].play();
 				playerLife++;
 				lifeCheck();
+			} else if (rand2 > lifeChance && rand2 <= (lifeChance + treasureChance) ) {
+				box.innerHTML = '<img src="https://cdn2.iconfinder.com/data/icons/outlined-valuable-items/200/monetary_treasure_closed-512.png" width="100%"></img>';
+				$(box).css("background-color", "Linen");
+				$("#heart")[0].play();
+				score += 1000;
 			} else {
 				// Tile is clear
 				box.innerHTML = "";
@@ -156,6 +161,7 @@ $(document).ready(function() {
 		if (playerLife >= 1) {
 			updateMessage('You have ' + playerLife + ' lives!');
 		} else {
+			score = 0;
 			updateMessage('You are dead, game over! Your score is ' + score);
 			$("div").off("click");
 		} 
@@ -183,4 +189,3 @@ $(document).ready(function() {
 
 	setUp();
 });
-	
