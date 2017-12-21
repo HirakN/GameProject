@@ -72,6 +72,7 @@ $(document).ready(function() {
 			
 			if ( isAdjacent(buttonClass) ) {
 				moves++;
+				score+=100;
 				reveal(this);
 				currentBox = buttonClass;
 				console.log("currentbox: " + currentBox);
@@ -85,9 +86,10 @@ $(document).ready(function() {
 
 		$("#lantern").click(function() {
 			var lantArray = adjacentBoxes(currentBox);
+			console.log("lantern array: " + lantArray)
 			var box = $(".box"); // array of boxes
 			//debugger;
-			moves++;
+			score+=500;
 			for (var i in lantArray) {
 				var boxToReveal = lantArray[i];
 				reveal(box[boxToReveal]);
@@ -124,15 +126,18 @@ $(document).ready(function() {
  
 	function reveal(box) {
 		var rand = Math.random();
+		// For clear/beneficial tiles
 		if (rand < clearChance) {
 			var rand2 = Math.random();
-			if (rand2 < 0.2) {
+			// Chance for clear tile to contain life
+			if (rand2 < lifeChance) {
 				box.innerHTML = '<img src="https://cdn.pixabay.com/photo/2016/08/29/13/55/heart-1628313_960_720.png" width="100%"></img>';
 				$(box).css("background-color", "Linen");
 				$("#heart")[0].play();
 				playerLife++;
 				lifeCheck();
 			} else {
+				// Tile is clear
 				box.innerHTML = "";
 				$(box).css("background-color", "Linen");
 			}
