@@ -15,8 +15,10 @@
 $(document).ready(function() {
 
 	var clearChance = 0.7;
-	var lifeChance = 0.1;
+	var lifeChance = 0.15;
+
 	var currentBox = 0;	
+	
 	var playerLife = 3;
 	var gridSize = 7;
 	var hidden = false;
