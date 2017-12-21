@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 	function setUp() {
 		var bgmusic = document.getElementById("bg-music");
-		bgmusic.volume = 0.1;
+		bgmusic.volume = 0.2;
 		
 		makeGrid();
 		addListeners();
