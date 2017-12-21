@@ -62,6 +62,7 @@ $(document).ready(function() {
 
 		$(".box").click(function() {
 			// reutrns string boxid number
+			$(".box").removeAttr("style").text("");
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
@@ -89,6 +90,7 @@ $(document).ready(function() {
 				var boxToReveal = lantArray[i];
 				reveal(box[boxToReveal]);
 			}
+			updateFields();
 		});
 
 		$("#hide-instr").click(function() {
