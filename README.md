@@ -4,7 +4,6 @@
 This project is a browser based 2D game that can be played by the user. It it loosely inspired by minesweeper.
 
 ##Purpose
-
 The main purpose of the game is to demostrate the progress made since the beggining of the training.
 
 ## Technologies	
