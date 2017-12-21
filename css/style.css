@@ -42,11 +42,13 @@ h1,h2,p,ul {
 
 .layout-text {
 	margin: 0 auto;
+	padding-top: 5px;	
 	width: 700px;
 }
 
 .layout-text .game-attr {
 	display: inline;
+	margin: 0 52px;
 }
 
 .button-container {
