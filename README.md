@@ -6,7 +6,7 @@ This project is a browser based 2D game that can be played by the user. It it lo
 ## Purpose
 The main purpose of the game is to demostrate the progress made since the beggining of the training.
 
-## Instruction
+## Instructions
 You start of on the top left orange square. The goal of the game is to make it to the same coloured square on the opposite side and get as many points as you can. You start off with 3 lives.
 
 You accumulate points by moving through the grid.
