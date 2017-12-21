@@ -4,6 +4,7 @@
 
 body {
 	background: url('../img/metal-background.jpeg');
+	animation: moveBackground 15s linear infinite;
 }
 
 h1,h2,p,ul {
@@ -16,11 +17,12 @@ h1,h2,p,ul {
 	margin: 5px auto;
 	border: 3px solid white;
 	text-align: center;
-	font-size: 20px;
 }	
 
 #message-board {
 	color: orange;
+	margin: 10px 0;
+	font-size: 24px;
 }
 
 #info {
@@ -77,4 +79,12 @@ h1,h2,p,ul {
 .box {
 	text-align: center;
 	font-size: 24px;
+}
+
+@keyframes moveBackground {
+	from {
+		background-position: 0 0;
+	} to {
+		background-position: -1000px;
+	}
 }
