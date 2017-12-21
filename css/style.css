@@ -47,8 +47,6 @@ h1,h2,p,ul {
 
 .layout-text .game-attr {
 	display: inline;
-	padding-right: 55px;
-	padding-left: 55px;
 }
 
 .button-container {
@@ -58,15 +56,15 @@ h1,h2,p,ul {
 }
 
 #game-container {
-	height: 700px;
-	width: 700px;
+	height: 49vw;
+	width: 49vw;
 	margin: 0 auto;
 	border: 3px solid #FFF;
 }
 
 #game-container div {
-	height: 100px;
-	width: 100px;
+	height: 7vw;
+	width: 7vw;
 	border: 3px solid #FFF;
 	float: left;
 	margin: 0 auto;
@@ -88,4 +86,35 @@ h1,h2,p,ul {
 	} to {
 		background-position: -1000px;
 	}
+}
+
+@media only screen and (max-width: 750px) {
+	#game-container {
+
+	}
+
+	#game-container div {
+		
+	}
+
+	.layout-text {
+		width: 90%;
+	}
+
+	.layout-text .game-attr {
+		display: block;
+		padding: 0;
+		text-align: center;
+	}
+
+	.button-container {
+		width: 90%;
+	}
+
+	#message-container {
+		width: 90%;
+		height: 50px;
+	}	
+
+
 }

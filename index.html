@@ -12,6 +12,9 @@
 	<audio id="bomb">
 	  	<source src="music/boms-explosion.mp3" type="audio/mp3">
 	</audio>
+	<audio id="heart">
+	  	<source src="music/heart.mp3" type="audio/mp3">
+	</audio>
 	
 	<div id="container">
 		<div id="message-container">	
@@ -27,12 +30,13 @@
 			<h2 class="game-attr" id="score">Score: 0</h2>
 			<h2 class="game-attr" id="lives">Lives: 3</h2>
 			<h2 class="game-attr" id="moves">Moves: 0</h2>
-
-			<div class="button-container">
-				<button class="button" id="lantern">Use Lantern</button>
-			</div>
 		</div>
 
+		<div class="button-container">
+			<button class="button" id="lantern">Use Lantern</button>
+		</div>
+
+		<!-- container for text -->
 		<div class="layout-text" id="instructions">
 			<h2>Instructions</h2>
 			<p>
@@ -62,7 +66,10 @@
 		<div class = "button-container">
 			<button class="button" id="hide-instr">Toggle Instructions</button>
 		</div>
-		
+
+		<audio id="bg-music" controls autoplay>
+	  		<source src="music/LightEmUp.mp3" type="audio/mp3">
+		</audio>
 	</div>
 </body>
 </html>

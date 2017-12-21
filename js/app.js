@@ -24,6 +24,8 @@ $(document).ready(function() {
 	var score = 0;
 
 	function setUp() {
+		var bgmusic = document.getElementById("bg-music");
+		bgmusic.volume = 0.1;
 		
 		makeGrid();
 		addListeners();
@@ -62,7 +64,7 @@ $(document).ready(function() {
 
 		$(".box").click(function() {
 			// reutrns string boxid number
-			$(".box").removeAttr("style").text("");
+			$(".box").removeAttr("style").text("");	
 			var buttonClass = $(this).attr("class");
 			// returns integer version of boxid number
 			buttonClass = parseInt(buttonClass);
@@ -127,6 +129,7 @@ $(document).ready(function() {
 			if (rand2 < 0.2) {
 				box.innerHTML = '<img src="https://cdn.pixabay.com/photo/2016/08/29/13/55/heart-1628313_960_720.png" width="100%"></img>';
 				$(box).css("background-color", "Linen");
+				$("#heart")[0].play();
 				playerLife++;
 				lifeCheck();
 			} else {
