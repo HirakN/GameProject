@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MineWalker</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<audio id="bomb">
+	  	<source src="music/boms-explosion.mp3" type="audio/mp3">
+	</audio>
+	<audio id="heart">
+	  	<source src="music/heart.mp3" type="audio/mp3">
+	</audio>
+	
+	<div id="container">
+		<div id="message-container">	
+			<marquee id="message-board" scrollamount="15">WELCOME TO MINEWALKER</marquee>
+		</div>
+
+		<div id="game-container">
+			<!-- Done in JS -->
+		</div>
+		<div id="clear"></div>
+		
+		<div class="layout-text">
+			<h2 class="game-attr" id="score">Score: 0</h2>
+			<h2 class="game-attr" id="lives">Lives: 3</h2>
+			<h2 class="game-attr" id="moves">Moves: 0</h2>
+		</div>
+
+		<div class="button-container">
+			<button class="button" id="lantern">Use Lantern</button>
+		</div>
+
+		<!-- container for text -->
+		<div class="layout-text black-bg" id="instructions">
+			<h2>Instructions</h2>
+			<p>
+				You start of on the top left orange square. The goal of the game is to make it to the same coloured square on the opposite side and get as many points as you can. You start off with 3 lives.
+			</p>
+			<p>
+				You accumulate points by moving through the grid.
+			</p>
+			<p>
+				You move by clicking any of the (up to) 8 adjacent squares. When you click a square, one of three things can happen:
+			</p>
+
+			<ul>
+				<li>You can find a bomb, which will remove one life.</li>
+				<li>You can find a heart which will give you one life.</li>
+				<li>You can find a perfectly safe blank square.</li>
+				<li>You can find a treasure chest (rare) which increases your score by 1000.</li>
+			</ul>
+			
+			<p>
+				You can use the lantern to boost your points but it is risky. It will illuminate the 8 tiles around you revealing whatever they had inside bombs, hearts or empty squares.
+			</p>
+			<p>
+				The game ends when you reach the end or run out of lives. If you run out of lives, you will end on 0 points.
+			</p>
+		</div>
+		
+		<div class = "button-container">
+			<button class="button" id="hide-instr">Toggle Instructions</button>
+		</div>
+
+		<audio id="bg-music" controls autoplay>
+	  		<source src="music/LightEmUp.mp3" type="audio/mp3">
+		</audio>
+	</div>
+</body>
+</html>
